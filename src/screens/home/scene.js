@@ -54,10 +54,10 @@ export default class Home extends Component {
                             style = {Style.button_size}
                             activeOpacity = {0.5}  
                             onPress = {() => {
-                            Router.navigation('Friend', {Friend: 'Friend'});
+                            Router.navigation('Chat', {Chat: 'Chat'});
                         }}>
                             <ImageBackground 
-                                source = {Assets.friends} 
+                                source = {Assets.chaty} 
                                 style = {Style.button_size}/>
                         </TouchableOpacity>
                     </View>
@@ -82,6 +82,41 @@ export default class Home extends Component {
                         }}>
                             <ImageBackground 
                                 source = {Assets.welcome} 
+                                style = {Style.button_size}/>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style = {Style.row}>
+                        <TouchableOpacity
+                            style = {Style.button_size}
+                            activeOpacity = {0.5}  
+                            onPress = {() => {
+                            Router.navigation('Bookroom', {Bookroom: 'Bookroom'});
+                        }}>
+                            <ImageBackground 
+                                source = {Assets.bookroom} 
+                                style = {Style.button_size}/>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style = {Style.button_size}
+                            activeOpacity = {0.5}  
+                            onPress = {() => {
+                            Router.navigation('Controlroom', {Controlroom: 'Controlroom'});
+                        }}>
+                            <ImageBackground 
+                                source = {Assets.friends} 
+                                style = {Style.button_size}/>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity
+                            style = {Style.button_size}
+                            activeOpacity = {0.5}  
+                            onPress = {() => {
+                            Router.navigation('Newsfeed', {Newsfeed: 'Newsfeed'});
+                        }}>
+                            <ImageBackground 
+                                source = {Assets.newsfeed} 
                                 style = {Style.button_size}/>
                         </TouchableOpacity>
                     </View>
