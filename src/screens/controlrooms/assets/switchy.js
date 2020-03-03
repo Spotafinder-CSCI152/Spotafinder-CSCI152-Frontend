@@ -9,6 +9,7 @@ export default Switchy = (props) => {
          <Switch
          onValueChange = {props.toggleSwitch1}
          value = {props.switch1Value}/>
+         
       </View>
    )
 }

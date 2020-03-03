@@ -27,7 +27,7 @@ export default createAppContainer(
             
         },
         {
-            initialRouteName: 'Home',
+            initialRouteName: 'Controlroom',
         },
     )
 );
