@@ -9,7 +9,9 @@ import setting from '../screens/setting/scene';
 import chat from '../screens/chat/scene';
 import bookroom from '../screens/bookroom/scene';
 import controlroom from '../screens/controlrooms/scene';
-import newsfeed from '../screens/newsfeed/scene'
+import newsfeed from '../screens/newsfeed/scene';
+ import AssetExample from '../screens/graph/AssetExample';
+// import Main from '../screens/graph/Main';
 
 export default createAppContainer(
     createSwitchNavigator(
@@ -23,11 +25,13 @@ export default createAppContainer(
             'Login': {screen: login},
             'Newsfeed' :{screen: newsfeed},
             'Register': {screen: register},
-            'Setting': {screen: setting}
+            'Setting': {screen: setting},
+              'AssetExample':{screen: AssetExample},
+            //  'Main': {screen: Main},
             
         },
         {
-            initialRouteName: 'Controlroom',
+            initialRouteName: 'AssetExample',
         },
     )
 );
