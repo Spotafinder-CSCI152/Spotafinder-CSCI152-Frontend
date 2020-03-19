@@ -31,7 +31,7 @@ export default createAppContainer(
             
         },
         {
-            initialRouteName: 'AssetExample',
+            initialRouteName: 'Home',
         },
     )
 );
