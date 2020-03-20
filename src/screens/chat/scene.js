@@ -20,9 +20,9 @@ export default class Chat extends React.Component {
     return {
       name: this.props.navigation.state.params.name,
       email: this.props.navigation.state.params.email,
-      avatar: this.props.navigation.state.params.avatar,
+      //avatar: this.props.navigation.state.params.avatar,
       id: firebaseSDK.uid,
-      _id: firebaseSDK.uid
+      //_id: firebaseSDK.uid
     };
   }
 
