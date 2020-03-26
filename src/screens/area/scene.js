@@ -31,7 +31,7 @@ function get_building() {
         path.get().then((doc) => {
             var buildings = Object.keys(doc.data()).map((key) => { return {name: key} });
             resolve(buildings);
-        });
+        }); 
     });
 }
 

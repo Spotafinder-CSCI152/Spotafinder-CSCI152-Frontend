@@ -112,7 +112,7 @@ export default class Home extends Component {
                             style = {Style.button_size}
                             activeOpacity = {0.5}  
                             onPress = {() => {
-                            Router.navigation('Newsfeed', {Newsfeed: 'Newsfeed'});
+                            Router.navigation('Friendslist', {Friendslist: 'Friendslist'});
                         }}>
                             <ImageBackground 
                                 source = {Assets.newsfeed} 

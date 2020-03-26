@@ -48,6 +48,20 @@ export default class Controlroom extends React.Component {
     const {value} = this.state;
     return (
       <View>
+     <Button  style={{  display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}
+            title= "Press Me"
+            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}
+            />
+            <Button  style={{  display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}
+            title= "Press Me"
+            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}
+            />
         <View style={styles.container}>
           <Text style={styles.text}>{String(value)}</Text>
           <Slider

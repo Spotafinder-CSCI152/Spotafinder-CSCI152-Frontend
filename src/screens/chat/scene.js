@@ -4,7 +4,7 @@ import {View, TouchableOpacity,Button} from 'react-native'
 import Router from '../../navigator/router'
 import Style from './style'
 
-
+import firebase from '../../configs/firebase'
 import firebaseSDK from '../../configs/firebaseSDK';
 
 export default class Chat extends React.Component {
@@ -22,7 +22,7 @@ export default class Chat extends React.Component {
       email: this.props.navigation.state.params.email,
       //avatar: this.props.navigation.state.params.avatar,
       id: firebaseSDK.uid,
-      //_id: firebaseSDK.uid
+      _id: firebaseSDK.uid
     };
   }
 

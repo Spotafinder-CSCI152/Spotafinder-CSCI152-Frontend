@@ -9,7 +9,7 @@ import setting from '../screens/setting/scene';
 import chat from '../screens/chat/scene';
 import bookroom from '../screens/bookroom/scene';
 import controlroom from '../screens/controlrooms/scene';
-import newsfeed from '../screens/newsfeed/scene';
+import friendslist from '../screens/friendslist/scene';
  import AssetExample from '../screens/graph/AssetExample';
 // import Main from '../screens/graph/Main';
 
@@ -23,7 +23,7 @@ export default createAppContainer(
             'Friend': {screen: friend},
             'Home': {screen: home},
             'Login': {screen: login},
-            'Newsfeed' :{screen: newsfeed},
+            'Friendslist' :{screen: friendslist},
             'Register': {screen: register},
             'Setting': {screen: setting},
               'AssetExample':{screen: AssetExample},
@@ -31,7 +31,7 @@ export default createAppContainer(
             
         },
         {
-            initialRouteName: 'Login',
+            initialRouteName: 'Home',
         },
     )
 );
