@@ -117,12 +117,8 @@ export default class Bookroom extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-         {image: "https://bootdey.com/img/Content/avatar/avatar6.png", username:"Dr.Liu"},
-         {image: "https://bootdey.com/img/Content/avatar/avatar2.png", username:"Vincy Poo"},
-         {image: "https://bootdey.com/img/Content/avatar/avatar3.png", username:"Davey Poo"},
-         {image: "https://bootdey.com/img/Content/avatar/avatar4.png", username:"Golly Poo"},
-         {image: "https://bootdey.com/img/Content/avatar/avatar1.png", username:"Brainy Poo"},
-         {image: "https://bootdey.com/img/Content/avatar/avatar6.png", username:"Irajy Poo"},
+         {image: "https://bootdey.com/img/Content/avatar/avatar6.png", username:"Room"},
+        
       ]),
     };
   }
@@ -153,8 +149,8 @@ export default class Bookroom extends Component {
             />
           <View style={styles.header}>
             <View style={styles.headerContent}>
-                <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
-                <Text style={styles.name}>Main Protagonist</Text>
+                <Image style={styles.avatar} source={{uri: 'http://asbarez.com/App/Asbarez/eng/2015/01/fresno-state-library.jpg'}}/>
+                <Text style={styles.name}>Fresno State Library Room booking</Text>
             </View>
           </View>
 
@@ -163,12 +159,43 @@ export default class Bookroom extends Component {
               dataSource={this.state.dataSource}
               renderRow={(user) => {
                 return (
-                  <TouchableOpacity>
+                  <View>
+                  <TouchableOpacity  onPress = {() => {Router.navigation('Room1', {User:'Room1'})
+            }}>
                     <View style={styles.box}>
-                      <Image style={styles.image} source={{uri: user.image}}/>
-                       <Text style={styles.username}>{user.username}</Text>
+                      <Image style={styles.image} source={{uri: 'http://www.mydoorsign.com/img/lg/S/Room-1-Tactile-Braille-Sign-SE-5208.gif'}}/>
+                       <Text style={styles.username}>Room 1</Text>
                     </View>
                   </TouchableOpacity>
+                  <TouchableOpacity  onPress = {() => {Router.navigation('Room2', {User:'Room2'})
+            }}>
+                    <View style={styles.box}>
+                      <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
+                       <Text style={styles.username}>Room 2</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity  onPress = {() => {Router.navigation('Room3', {User:'Room3'})
+            }}>
+                    <View style={styles.box}>
+                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Text style={styles.username}>Room 3</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity  onPress = {() => {Router.navigation('Room4', {User:'Room4'})
+            }}>
+                    <View style={styles.box}>
+                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Text style={styles.username}>Room 4</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity onPress = {() => {Router.navigation('Room5', {User:'Room5'})
+            }} >
+                    <View style={styles.box}>
+                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Text style={styles.username}>Room 5</Text>
+                    </View>
+                  </TouchableOpacity>
+                  </View>
                 )
             }}/>
           </View>
@@ -179,15 +206,15 @@ export default class Bookroom extends Component {
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor: "#20B2AA",
+    backgroundColor: "#FF0000",
   },
   headerContent:{
     padding:30,
     alignItems: 'center',
   },
   avatar: {
-    width: 130,
-    height: 130,
+    width: 140,
+    height: 140,
     borderRadius: 63,
     borderWidth: 4,
     borderColor: "#FFFFFF",
@@ -210,7 +237,7 @@ const styles = StyleSheet.create({
     padding:5,
     marginTop:5,
     marginBottom:5,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#00FF',
     flexDirection: 'row',
     shadowColor: 'black',
     shadowOpacity: .2,
@@ -221,7 +248,7 @@ const styles = StyleSheet.create({
     elevation:2
   },
   username:{
-    color: "#20B2AA",
+    color: "#FFFFFF",
     fontSize:22,
     alignSelf:'center',
     marginLeft:10
