@@ -109,9 +109,11 @@ import {
   ListView
 } from 'react-native';
 import Router from '../../navigator/router';
-
+import Calander from './utils/calander';
+import Modal from 'react-native-modal';
+import Popcal from './utils/popcal';
 export default class Bookroom extends Component {
-
+ 
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -126,30 +128,12 @@ export default class Bookroom extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Button  style={{  display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
-            }}
-            />
-            <Button  style={{  display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
-            }}
-            />
-            <Button  style={{  display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
-            }}
-            />
           <View style={styles.header}>
             <View style={styles.headerContent}>
+            <TouchableOpacity onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}>
                 <Image style={styles.avatar} source={{uri: 'http://asbarez.com/App/Asbarez/eng/2015/01/fresno-state-library.jpg'}}/>
+                </TouchableOpacity>
                 <Text style={styles.name}>Fresno State Library Room booking</Text>
             </View>
           </View>
@@ -160,41 +144,39 @@ export default class Bookroom extends Component {
               renderRow={(user) => {
                 return (
                   <View>
-                  <TouchableOpacity  onPress = {() => {Router.navigation('Room1', {User:'Room1'})
-            }}>
-                    <View style={styles.box}>
-                      <Image style={styles.image} source={{uri: 'http://www.mydoorsign.com/img/lg/S/Room-1-Tactile-Braille-Sign-SE-5208.gif'}}/>
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 1</Text>
-                    </View>
-                  </TouchableOpacity>
-                  <TouchableOpacity  onPress = {() => {Router.navigation('Room2', {User:'Room2'})
-            }}>
-                    <View style={styles.box}>
-                      <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
+                  <Popcal/>
+                  </View>
+                  
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 2</Text>
-                    </View>
-                  </TouchableOpacity>
-                  <TouchableOpacity  onPress = {() => {Router.navigation('Room3', {User:'Room3'})
-            }}>
-                    <View style={styles.box}>
-                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Popcal/>
+                  </View>
+
+                  
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 3</Text>
-                    </View>
-                  </TouchableOpacity>
-                  <TouchableOpacity  onPress = {() => {Router.navigation('Room4', {User:'Room4'})
-            }}>
-                    <View style={styles.box}>
-                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Popcal/>
+                  </View>
+
+                  
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 4</Text>
-                    </View>
-                  </TouchableOpacity>
-                  <TouchableOpacity onPress = {() => {Router.navigation('Room5', {User:'Room5'})
-            }} >
-                    <View style={styles.box}>
-                      <Image style={styles.image} source={{uri: 'https://www.touchtapplay.com/wp-content/uploads/2015/09/The-Room-3.jpg'}}/>
+                       <Popcal/>
+                  </View>
+
+                  
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 5</Text>
-                    </View>
-                  </TouchableOpacity>
+                       <Popcal/>
+                  </View>
+                  
                   </View>
                 )
             }}/>
