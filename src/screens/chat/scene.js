@@ -8,42 +8,42 @@ import firebase from '../../configs/firebase'
 import firebaseSDK from '../../configs/firebaseSDK';
 
 export default class Chat extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: (navigation.state.params || {}).name || 'Chat!'
-  });
+  // static navigationOptions = ({ navigation }) => ({
+  //   title: (navigation.state.params || {}).name || 'Chat!'
+  // });
 
-  state = {
-    messages: []
-  };
+  // state = {
+  //   messages: []
+  // };
 
-  get user() {
-    return {
-      name: this.props.navigation.state.params.name,
-      email: this.props.navigation.state.params.email,
-      //avatar: this.props.navigation.state.params.avatar,
-      id: firebaseSDK.uid,
-      _id: firebaseSDK.uid
-    };
-  }
+  // get user() {
+  //   return {
+  //     name: this.props.navigation.state.params.name,
+  //     email: this.props.navigation.state.params.email,
+  //     //avatar: this.props.navigation.state.params.avatar,
+  //     id: firebaseSDK.uid,
+  //     _id: firebaseSDK.uid
+  //   };
+  // }
 
   render() {
     return (
       <GiftedChat
-        messages={this.state.messages}
-        onSend={firebaseSDK.send}
-        user={this.user}
+        // messages={this.state.messages}
+        // onSend={firebaseSDK.send}
+        // user={this.user}
       />
     );
   }
 
-  componentDidMount() {
-    firebaseSDK.refOn(message =>
-      this.setState(previousState => ({
-        messages: GiftedChat.append(previousState.messages, message)
-      }))
-    );
-  }
-  componentWillUnmount() {
-    firebaseSDK.refOff();
-  }
+  // componentDidMount() {
+  //   firebaseSDK.refOn(message =>
+  //     this.setState(previousState => ({
+  //       messages: GiftedChat.append(previousState.messages, message)
+  //     }))
+  //   );
+  // }
+  // componentWillUnmount() {
+  //   firebaseSDK.refOff();
+  // }
 }

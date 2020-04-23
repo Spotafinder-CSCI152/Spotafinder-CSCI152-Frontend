@@ -77,7 +77,7 @@ export default class Home extends Component {
                             style = {Style.button_size}
                             activeOpacity = {0.5}  
                             onPress = {() => {
-                            Router.navigation('Welcome', {Welcome: 'Welcome'});
+                            Router.navigation('Graph', {Graph: 'Graph'});
                         }}>
                             <ImageBackground 
                                 source = {Assets.welcome} 
