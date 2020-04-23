@@ -27,6 +27,7 @@ export default class Calander extends Component {
       <View style={styles.container}>
         <CalendarPicker
           onDateChange={this.onDateChange}
+          
         />
  
         <View>

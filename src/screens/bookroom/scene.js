@@ -109,7 +109,6 @@ import {
   ListView
 } from 'react-native';
 import Router from '../../navigator/router';
-import Calander from './utils/calander';
 import Modal from 'react-native-modal';
 import Popcal from './utils/popcal';
 export default class Bookroom extends Component {

@@ -15,6 +15,7 @@ import friendslist from '../screens/friendslist/scene';
  import Room3 from '../screens/bookroom/room3/scene';
  import Room4 from '../screens/bookroom/room4/scene';
  import Room5 from '../screens/bookroom/room5/scene';
+ //import ToDoItem from '../screens/checkbox/scene';
 // import Main from '../screens/graph/Main';
 
 export default createAppContainer(
@@ -35,11 +36,12 @@ export default createAppContainer(
               'Room3':{screen:Room3},
               'Room4':{screen:Room4},
               'Room5':{screen:Room5},
-            //  'Main': {screen: Main},
+             // 'Main': {screen: Main},
             
         },
         {
-            initialRouteName: 'Bookroom',
+            initialRouteName: 'Home',
         },
     )
 );
+

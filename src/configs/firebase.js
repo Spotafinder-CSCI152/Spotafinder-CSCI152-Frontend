@@ -11,3 +11,6 @@ export default firebase.initializeApp({
     appId: "1:655792265694:web:f9b990da5ce0058fb3254f",
     measurementId: "G-20KHH24XWJ"
 });
+
+// const app = Firebase.initializeApp(firebaseConfig);
+// export const db = app.database();
