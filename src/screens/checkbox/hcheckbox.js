@@ -1,6 +1,6 @@
-// import
-
-// class App extends React.Component {
+// import {db} from '../../configs/config';
+// import React from 'react'
+// class checkbox extends React.Component {
 //     constructor() {
 //       super();
 //       this.state = {
@@ -9,10 +9,26 @@
 //       };
 //     }
 //     componentDidMount() {
+//         db.ref('/todos').on('value', querySnapShot => {
+//             let data = querySnapShot.val() ? querySnapShot.val() : {};
+//             let todoItems = {...data};
+//             this.setState({
+//               todos: todoItems,
+//             });
+//           });
 //     }
 //     addNewTodo() {
+//         db.ref('/todos').push({
+//             done: false,
+//             todoItem: this.state.presentToDo,
+//           });
+//           Alert.alert('Action!', 'A new To-do item was created');
+//           this.setState({
+//             presentToDo: '',
+//           });
 //     }
 //     clearTodos() {
+//         db.ref('/todos').remove();
 //     }
 //     render() {
 //       return (
