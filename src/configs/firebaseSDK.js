@@ -16,5 +16,5 @@ class FirebaseSDK {
   }
 }
 
-const firebaseSDK = new FirebaseSDK();
-export default firebaseSDK;
+
+

@@ -8,24 +8,37 @@ import {
   ScrollView,
   TextInput,
 } from 'react-native';
+
 import CheckBox from 'react-native-check-box';
 
 const [doneState, setDone] = useState(false);
 const onCheck = () => {
     setDone(!doneState);
 };
+setDone(true);
 
-const ToDoItem = () => {
+const ToDoItem = ({todoItem: {todoItem: name, done}, id}) => {
+  const [doneState, setDone] = useState(done);
+  const onCheck = () => {
+    setDone(!doneState);
+    db.ref('/todos').update({
+      [id]: {
+        todoItem: name,
+        done: !doneState,
+      },
+    });
+  };
   return (
-    <View style = {styles.todoItem}>
+    <View style={styles.todoItem}>
       <CheckBox
         checkBoxColor="skyblue"
         onClick={onCheck}
         isChecked={doneState}
         disabled={doneState}
+     
       />
-      <Text style = {[styles.todoText, {pocaity: doneState ? .02 : 1}]}>
-        A random To-Do item
+      <Text style={[styles.todoText, {opacity: doneState ? 0.2 : 1}]}>
+        {name}
       </Text>
     </View>
   );

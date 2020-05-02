@@ -12,5 +12,5 @@ export default firebase.initializeApp({
     measurementId: "G-20KHH24XWJ"
 });
 
-// const app = Firebase.initializeApp(firebaseConfig);
-// export const db = app.database();
+const app = Firebase.initializeApp(firebaseConfig);
+export const db = app.database();

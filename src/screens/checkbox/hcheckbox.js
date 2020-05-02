@@ -1,6 +1,17 @@
 import {db} from '../../configs/config';
 import React from 'react'
-class checkbox extends React.Component {
+import {
+    StyleSheet,
+    Alert,
+    View,
+    Text,
+    Button,
+    ScrollView,
+    TextInput,
+  } from 'react-native';
+  import Router from '../../navigator/router';
+
+export default class checkbox extends React.Component {
     constructor() {
       super();
       this.state = {
@@ -31,12 +42,46 @@ class checkbox extends React.Component {
         db.ref('/todos').remove();
     }
     render() {
+        let todosKeys = Object.keys(this.state.todos);
       return (
+        
+         
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainerStyle}>
+           <Button  style={{  display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}
+            title= "Press Me"
+            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}
+            />
+            <Button  style={{  display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}
+            title= "Press Me"
+            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}
+            />
+            <Button  style={{  display: "flex",
+            justifyContent: "center",
+            alignItems: "center"}}
+            title= "Press Me"
+            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}
+            />
           <View>
-            {/*Empty view: will contain to-do items soon*/}
+            {todosKeys.length > 0 ? (
+            todosKeys.map(key => (
+             <ToDoItem
+                key={key}
+                id={key}
+                todoItem={this.state.todos[key]}
+                 />
+                ))
+                 ) : (
+            <Text>No todo item</Text>
+            )}
           </View>
           <TextInput
             placeholder="Add new Todo"
@@ -58,6 +103,7 @@ class checkbox extends React.Component {
             <Button title="Clear todos" onPress={this.clearTodos} color="red" />
           </View>
         </ScrollView>
+       
       );
     }
   }

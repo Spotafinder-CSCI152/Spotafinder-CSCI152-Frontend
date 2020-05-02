@@ -15,10 +15,11 @@ import friendslist from '../screens/friendslist/scene';
  import Room3 from '../screens/bookroom/room3/scene';
  import Room4 from '../screens/bookroom/room4/scene';
  import Room5 from '../screens/bookroom/room5/scene';
+ import checkbox from '../screens/checkbox/hcheckbox'; 
  //import ToDoItem from '../screens/checkbox/scene';
 // import Main from '../screens/graph/Main';
 import graph from '../screens/graph/scene';
-//import 
+ 
 export default createAppContainer(
     createSwitchNavigator(
         {
@@ -38,11 +39,11 @@ export default createAppContainer(
               'Room4':{screen:Room4},
               'Room5':{screen:Room5},
               'Graph':{screen: graph},
-             // 'Main': {screen: Main},
+              'Checkboxx': {screen: checkbox},
             
         },
         {
-            initialRouteName: 'Home',
+            initialRouteName: 'Checkboxx',
         },
     )
 );
