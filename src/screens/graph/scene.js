@@ -10,7 +10,7 @@ class App extends Component {
             .text("New Temperature")
  
     render(<div ref="temperatures"></div>)
-}
+
 export default App
 
 d3.select(this.refs.temperatures)
@@ -47,4 +47,4 @@ d3.selectAll("circle").transition()
     .duration(750)
     .delay(function(dataPoint, iteration) => iteration * 10)
     .attr("r", (dataPoint) => Math.sqrt(d * scale))
-
+      }
