@@ -1,49 +1,121 @@
-import React from 'react';
+// import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-import {View, TouchableOpacity,Button} from 'react-native'
-import Router from '../../navigator/router'
-import Style from './style'
+import React, {Component} from 'react'; 
+import {View, TouchableOpacity, Button, Text, Slider,StyleSheet,Image} from 'react-native'
+import Router from '../../navigator/router';
+import SafeViewAndroid from '../../tool/globalstyle';
+import { SafeAreaView } from 'react-navigation';
 
-import firebase from '../../configs/firebase'
 import firebaseSDK from '../../configs/firebaseSDK';
+import firebase from '../../configs/firebase';
 
-export default class Chat extends React.Component {
-  // static navigationOptions = ({ navigation }) => ({
-  //   title: (navigation.state.params || {}).name || 'Chat!'
-  // });
 
-  // state = {
-  //   messages: []
-  // };
+export default class chat extends Component {
+  state = {
+    messages: [],
+    _id: firebase.auth().currentUser.uid,
+    firstName: '',
+    lastName: ''
+  }
 
-  // get user() {
-  //   return {
-  //     name: this.props.navigation.state.params.name,
-  //     email: this.props.navigation.state.params.email,
-  //     //avatar: this.props.navigation.state.params.avatar,
-  //     id: firebaseSDK.uid,
-  //     _id: firebaseSDK.uid
-  //   };
-  // }
+  componentDidMount() {
+    var arrays = [];
+    const fd = async () => {
+        try {
+            const snapshot = await firebase.firestore().collection('chat').get();
+            const data = snapshot.docs.map(doc => doc.data());
+            for (let i = 0; i < data.length; ++i) {
+                const currMessage = data[i].messages
+                arrays = [...currMessage, ...arrays];
+            }
+            const newSnap = await firebase.firestore().collection('users').doc(this.state._id).get();
+            this.setState({
+                firstName: newSnap.data().first_name,
+                lastName: newSnap.data().last_name
+            })
+
+            console.log('From here');
+            console.log(arrays)
+
+            for (var i =0; i < arrays.length; ++i) {
+                console.log(arrays[i])
+            }
+
+            this.setState({
+                messages: arrays
+              })
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+    fd();
+  }
+
+  onSend(messages = []) {
+    this.setState(previousState => ({
+      messages: GiftedChat.append(previousState.messages, messages),
+    }))
+
+    // console.log('From on Send');
+    // console.log(this.state.messages);
+    let id = firebase.auth().currentUser.uid;
+    let user = firebase.firestore().collection('users').doc(id).get().then((snapshot) => {
+        
+        firebase.firestore().collection('chat').add({
+            messages:messages,
+            // user:{
+            //     id:id,
+            //     firstname:snapshot.data().first_name,
+            //     lastname:snapshot.data().last_name,
+            
+            // }
+             
+        })
+       
+    }); 
+  }
 
   render() {
     return (
+        <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+         <View style={styles.headerContent}>
+        <TouchableOpacity onPress = {() => {Router.navigation('Home', {User:'Home'})
+            }}>
+                <Image style={styles.avatar} source={{uri: 'http://asbarez.com/App/Asbarez/eng/2015/01/fresno-state-library.jpg'}}/>
+                </TouchableOpacity>
+                </View>
       <GiftedChat
-        // messages={this.state.messages}
-        // onSend={firebaseSDK.send}
-        // user={this.user}
+        renderUsernameOnMessage={true}
+        messages={this.state.messages}
+        onSend={messages => this.onSend(messages)}
+        user={{
+          _id: this.state._id,
+          name: this.state.firstName + this.state.lastName,
+          avatar: 'https://placeimg.com/140/140/any'
+        }}
+        
       />
-    );
+      </SafeAreaView>
+    )
   }
-
-  // componentDidMount() {
-  //   firebaseSDK.refOn(message =>
-  //     this.setState(previousState => ({
-  //       messages: GiftedChat.append(previousState.messages, message)
-  //     }))
-  //   );
-  // }
-  // componentWillUnmount() {
-  //   firebaseSDK.refOff();
-  // }
 }
+const styles = StyleSheet.create({
+    avatar: {
+      width: 140,
+      height: 140,
+      borderRadius: 63,
+      borderWidth: 4,
+      borderColor: "#FFFFFF",
+      marginBottom:10,
+    },
+    image:{
+      width: 60,
+      height: 60,
+    },
+    headerContent:{
+        padding:30,
+        alignItems: 'center',
+      },
+    
+  });
