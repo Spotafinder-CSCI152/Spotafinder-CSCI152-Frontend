@@ -81,7 +81,7 @@ export default class graph extends React.Component {
          borderRadius: 16
         }}
     />
-    </View>
+    </View>  
 
  </View>
  

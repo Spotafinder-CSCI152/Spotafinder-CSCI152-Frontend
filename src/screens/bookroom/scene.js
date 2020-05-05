@@ -106,11 +106,13 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  ListView
+  ListView,
+  SafeAreaView
 } from 'react-native';
 import Router from '../../navigator/router';
 import Modal from 'react-native-modal';
 import Popcal from './utils/popcal';
+import SafeViewAndroid from '../../tool/globalstyle';
 export default class Bookroom extends Component {
  
   constructor(props) {
@@ -126,7 +128,8 @@ export default class Bookroom extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea} >
+      <ScrollView>
           <View style={styles.header}>
             <View style={styles.headerContent}>
             <TouchableOpacity onPress = {() => {Router.navigation('Home', {User:'Home'})
@@ -175,19 +178,26 @@ export default class Bookroom extends Component {
                        <Text style={styles.username}>Room 5</Text>
                        <Popcal/>
                   </View>
+
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
+                       <Text style={styles.username}>Room 5</Text>
+                       <Popcal/>
+                  </View>
                   
                   </View>
                 )
             }}/>
           </View>
-      </View>
+          </ScrollView>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor: "#FF0000",
+    backgroundColor: "#AA1428",
   },
   headerContent:{
     padding:30,
@@ -198,7 +208,7 @@ const styles = StyleSheet.create({
     height: 140,
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: "#FFFFFF",
+    borderColor: "#E6E6FA",
     marginBottom:10,
   },
   image:{
@@ -206,9 +216,9 @@ const styles = StyleSheet.create({
     height: 60,
   },
   name:{
-    fontSize:22,
-    color:"#FFFFFF",
-    fontWeight:'600',
+    fontSize:19,
+    color:"#E6E6FA",
+    fontWeight:'900',
   },
   body: {
     padding:30,
@@ -218,7 +228,7 @@ const styles = StyleSheet.create({
     padding:5,
     marginTop:5,
     marginBottom:5,
-    backgroundColor: '#00FF',
+    backgroundColor: '#000042',
     flexDirection: 'row',
     shadowColor: 'black',
     shadowOpacity: .2,
@@ -230,8 +240,9 @@ const styles = StyleSheet.create({
   },
   username:{
     color: "#FFFFFF",
-    fontSize:22,
+    fontSize:19,
     alignSelf:'center',
-    marginLeft:10
+    marginLeft:10,
+    fontWeight:'900',
   }
 });
