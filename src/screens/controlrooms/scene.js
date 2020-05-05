@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-import {View, TouchableOpacity, Button, Text, Slider,StyleSheet,SafeAreaView} from 'react-native'
+import {View, TouchableOpacity, Button, Text, Slider,StyleSheet,SafeAreaView, ScrollView} from 'react-native'
 import Router from '../../navigator/router';
 import Switchy from './assets/switchy';
 import Picky from './assets/colorpicker'
@@ -11,7 +11,8 @@ import NumericInput from 'react-native-numeric-input'
 //import Slider from '@react-native-community/slider';
 import { ColorPicker } from 'react-native-color-picker'
 import { startAsync } from 'expo/build/AR';
-import SafeViewAndroid from '../../tool/globalstyle'
+import SafeViewAndroid from '../../tool/globalstyle';
+import Copypaste from '../controlrooms/copypaste'
 export default class Controlroom extends React.Component {
 
   constructor(props) {
@@ -83,18 +84,19 @@ export default class Controlroom extends React.Component {
     const {value} = this.state;
     return (
       <SafeAreaView style={SafeViewAndroid.AndroidSafeArea} >
-          <View style={{backgroundColor:'#AA1428'}}>
+      <ScrollView>
+      
+          <View style={{backgroundColor:'#E6E6FA'}}>
+          
             <Button  style={{  display: "flex",
             justifyContent: "center",
             alignItems: "center"}}
-            title= "Press Me"
+            title= "GO BACK"
             onPress = {() => {Router.navigation('Test', {User:'Test'})
             }}
             color='#000042'
             />
-            <View style={styles.box}>
-            <Text style={styles.text}> The noise level in your current room is blah</Text>
-            </View>
+            <Text style={styles.text2}>Control Room</Text>
         <View style={styles.container}>
           <Text style={styles.text}>{String(value)}</Text>
           <Slider
@@ -151,6 +153,7 @@ export default class Controlroom extends React.Component {
           
         </View>
         </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }
@@ -180,7 +183,14 @@ const styles = StyleSheet.create({
     fontSize: 23,
     textAlign: 'center',
     fontWeight:'900',
+    color:'black',
+  },
+  text2: {
+    fontSize: 23,
+    textAlign: 'center',
+    fontWeight:'900',
     color:'#E6E6FA',
+    backgroundColor:'#AA1428'
   },
  
   containertwo: {

@@ -19,6 +19,7 @@ import friendslist from '../screens/friendslist/scene';
 // import Main from '../screens/graph/Main';
 import graph from '../screens/graph/scene';
 import test from '../screens/bookroom/utils/test'
+import copypaste from '../screens/controlrooms/copypaste';
 
 export default createAppContainer(
     createSwitchNavigator(
@@ -40,10 +41,11 @@ export default createAppContainer(
               'Room5':{screen:Room5},
               'Graph':{screen: graph},
               'Test': {screen: test},
+              'Copypaste':{screen: copypaste},
             
         },
         {
-            initialRouteName: 'Home',
+            initialRouteName: 'Login',
         },
     )
 );

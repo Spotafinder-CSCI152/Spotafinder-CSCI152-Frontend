@@ -56,10 +56,11 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  ListView
+  ListView,
+  SafeAreaView
 } from 'react-native';
 import Router from '../../navigator/router';
-
+import SafeViewAndroid from '../../tool/globalstyle';
 export default class friendlist extends Component {
 
   constructor(props) {
@@ -79,28 +80,18 @@ export default class friendlist extends Component {
 
   render() {
     return (
+      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+      <ScrollView>
       <View style={styles.container}>
       <Button  style={{  display: "flex",
             justifyContent: "center",
             alignItems: "center"}}
-            title= "Press Me"
+            title= "GO HOME"
             onPress = {() => {Router.navigation('Home', {User:'Home'})
             }}
+            color='#000042'
             />
-            <Button  style={{  display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
-            }}
-            />
-            <Button  style={{  display: "flex",
-            justifyContent: "center",
-            alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
-            }}
-            />
+            
           <View style={styles.header}>
             <View style={styles.headerContent}>
                 <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
@@ -123,13 +114,15 @@ export default class friendlist extends Component {
             }}/>
           </View>
       </View>
+      </ScrollView>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor: "#20B2AA",
+    backgroundColor: "#aa1428",
   },
   headerContent:{
     padding:30,
@@ -140,7 +133,7 @@ const styles = StyleSheet.create({
     height: 130,
     borderRadius: 63,
     borderWidth: 4,
-    borderColor: "#FFFFFF",
+    borderColor: "#E6E6FA",
     marginBottom:10,
   },
   image:{
@@ -149,7 +142,7 @@ const styles = StyleSheet.create({
   },
   name:{
     fontSize:22,
-    color:"#FFFFFF",
+    color:"#E6E6FA",
     fontWeight:'600',
   },
   body: {
@@ -160,7 +153,7 @@ const styles = StyleSheet.create({
     padding:5,
     marginTop:5,
     marginBottom:5,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#000042',
     flexDirection: 'row',
     shadowColor: 'black',
     shadowOpacity: .2,
@@ -171,7 +164,7 @@ const styles = StyleSheet.create({
     elevation:2
   },
   username:{
-    color: "#20B2AA",
+    color: "#E6E6FA",
     fontSize:22,
     alignSelf:'center',
     marginLeft:10

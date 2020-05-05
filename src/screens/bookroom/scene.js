@@ -112,6 +112,7 @@ import {
 import Router from '../../navigator/router';
 import Modal from 'react-native-modal';
 import Popcal from './utils/popcal';
+import Item from './utils/item';
 import SafeViewAndroid from '../../tool/globalstyle';
 export default class Bookroom extends Component {
  
@@ -148,6 +149,11 @@ export default class Bookroom extends Component {
                   <View>
                   <View style={styles.box}>
                   <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
+                       <Text style={styles.username}>Data .....</Text>
+                  <Item/>
+                  </View>
+                  <View style={styles.box}>
+                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 1</Text>
                   <Popcal/>
                   </View>
@@ -177,13 +183,9 @@ export default class Bookroom extends Component {
                   <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
                        <Text style={styles.username}>Room 5</Text>
                        <Popcal/>
-                  </View>
+                  </View> 
 
-                  <View style={styles.box}>
-                  <Image style={styles.image} source={{uri:'https://i.ytimg.com/vi/H-teJf_Oxac/maxresdefault.jpg'}}/>
-                       <Text style={styles.username}>Room 5</Text>
-                       <Popcal/>
-                  </View>
+                  
                   
                   </View>
                 )
@@ -218,6 +220,12 @@ const styles = StyleSheet.create({
   name:{
     fontSize:19,
     color:"#E6E6FA",
+    fontWeight:'900',
+  },
+  box22: {
+    flex: 1,
+    marginLeft: 90,
+    fontSize:19,
     fontWeight:'900',
   },
   body: {

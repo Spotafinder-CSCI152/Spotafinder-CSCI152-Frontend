@@ -79,6 +79,7 @@ export default function Area() {
                     {/*Back Button*/}
                     <Button
                         title = 'Back'
+                        color='#000042'
                         onPress = {() => Router.navigation('Home', {Home: 'Home'})}
                     />
                 </View>

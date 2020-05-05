@@ -56,21 +56,11 @@ export default class chat extends Component {
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))
-
-    // console.log('From on Send');
-    // console.log(this.state.messages);
     let id = firebase.auth().currentUser.uid;
     let user = firebase.firestore().collection('users').doc(id).get().then((snapshot) => {
         
         firebase.firestore().collection('chat').add({
             messages:messages,
-            // user:{
-            //     id:id,
-            //     firstname:snapshot.data().first_name,
-            //     lastname:snapshot.data().last_name,
-            
-            // }
-             
         })
        
     }); 

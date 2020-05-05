@@ -16,14 +16,17 @@ export default function Setting() {
                     <View style = {Style.back_button}>
                         <Button
                             title = 'Cancel'
-                            color = 'gray'
+                            color = '#000042'
                             onPress = {() => Router.navigation('Home', {Home: 'Home'})}
                         />
                     </View>
                     <View>
                         <Button
-                        title = 'Done'
-                        color = 'gray'
+                        title = 'FRIENDSLIST'
+                        color = '#000042'
+                        onPress = {() => {
+                            Router.navigation('Friendslist', {Friendslist: 'Friendslist'});
+                        }}
                         />
                     </View>
                 </View>
@@ -55,6 +58,7 @@ export default function Setting() {
                             //onChangeText = {confirmPassowrd => inputConfirmPassword(confirmPassowrd)}
                             textAlign = 'center'
                         />
+                        
                         <TouchableOpacity style = {Style.logOut}>  
                             <Text>
                                 Log Out
