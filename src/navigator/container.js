@@ -10,6 +10,7 @@ import chat from '../screens/chat/scene';
 import bookroom from '../screens/bookroom/scene';
 import controlroom from '../screens/controlrooms/scene';
 import newsfeed from '../screens/newsfeed/scene'
+import graph from '../screens/graph/list'
 
 export default createAppContainer(
     createSwitchNavigator(
@@ -23,7 +24,8 @@ export default createAppContainer(
             'Login': {screen: login},
             'Newsfeed' :{screen: newsfeed},
             'Register': {screen: register},
-            'Setting': {screen: setting}
+            'Setting': {screen: setting},
+            'Graph': {screen: graph}
             
         },
         {
