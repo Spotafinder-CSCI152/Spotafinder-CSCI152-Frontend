@@ -9,8 +9,17 @@ import setting from '../screens/setting/scene';
 import chat from '../screens/chat/scene';
 import bookroom from '../screens/bookroom/scene';
 import controlroom from '../screens/controlrooms/scene';
-import newsfeed from '../screens/newsfeed/scene'
-import graph from '../screens/graph/list'
+import friendslist from '../screens/friendslist/scene';
+ //import AssetExample from '../screens/graph/AssetExample';
+ import Room2 from '../screens/bookroom/room2/scene';
+ import Room3 from '../screens/bookroom/room3/scene';
+ import Room4 from '../screens/bookroom/room4/scene';
+ import Room5 from '../screens/bookroom/room5/scene';
+ //import ToDoItem from '../screens/checkbox/scene';
+// import Main from '../screens/graph/Main';
+import graph from '../screens/graph/scene';
+import test from '../screens/bookroom/utils/test'
+import copypaste from '../screens/controlrooms/copypaste';
 
 export default createAppContainer(
     createSwitchNavigator(
@@ -22,14 +31,22 @@ export default createAppContainer(
             'Friend': {screen: friend},
             'Home': {screen: home},
             'Login': {screen: login},
-            'Newsfeed' :{screen: newsfeed},
+            'Friendslist' :{screen: friendslist},
             'Register': {screen: register},
             'Setting': {screen: setting},
-            'Graph': {screen: graph}
+              //'AssetExample':{screen: AssetExample},
+              'Room2':{screen:Room2},
+              'Room3':{screen:Room3},
+              'Room4':{screen:Room4},
+              'Room5':{screen:Room5},
+              'Graph':{screen: graph},
+              'Test': {screen: test},
+              'Copypaste':{screen: copypaste},
             
         },
         {
-            initialRouteName: 'Home',
+            initialRouteName: 'Login',
         },
     )
 );
+

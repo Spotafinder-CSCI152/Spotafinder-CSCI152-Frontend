@@ -6,7 +6,7 @@ export default styles = StyleSheet.create({
     //container for screen
     container: {
         flex: 1,
-        backgroundColor: '#D2D2D2',
+        backgroundColor: '#E6E6FA',
         //backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
     second_cotainer: {
         width: Window_Width * .90,
         height: Window_Height * .9,
-        backgroundColor: '#E2E2E2',
+        backgroundColor: '#E6E6FA',
         //backgroundColor: 'white',
         //alignItems: 'center',
     },
@@ -75,13 +75,13 @@ export default styles = StyleSheet.create({
         marginTop: Window_Height * 0.005,
         marginBottom: Window_Height * 0.030,
         borderRadius: 15,
-        backgroundColor: '#BCF4F5'
+        backgroundColor: '#000042'
     },
 
     logOut: {
         width: Window_Width * 0.60,
         height: Window_Height * 0.06,
-        backgroundColor: 'pink',
+        backgroundColor: '#aa1428',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 15,

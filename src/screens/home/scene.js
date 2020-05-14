@@ -11,7 +11,7 @@ import TimeSlideShow from 'react-native-timed-slideshow';
 import Style from './style'
 import Router from '../../navigator/router';
 import Assets from './utils/constants';
-
+import ImagePickerExample from './utils/functions';
 export default class Home extends Component {
 
     render() {
@@ -20,10 +20,9 @@ export default class Home extends Component {
                 source = {Assets.background} 
                 style = {Style.background_size}
             >
-                <Image
-                    source = {Assets.profile}
-                    style = {Style.profile_size}
-                />
+
+                <ImagePickerExample style={Style.profile_size}/>
+                
                 
                 <View style = {Style.slider_size}>
                     <TimeSlideShow   
@@ -46,6 +45,7 @@ export default class Home extends Component {
                             Router.navigation('Area', {Area: 'Area'});
                         }}>
                             <ImageBackground 
+                            color="white"
                                 source = {Assets.map} 
                                 style = {Style.button_size}/>
                         </TouchableOpacity>
@@ -78,19 +78,6 @@ export default class Home extends Component {
                             style = {Style.button_size}
                             activeOpacity = {0.5}  
                             onPress = {() => {
-                            Router.navigation('Welcome', {Welcome: 'Welcome'});
-                        }}>
-                            <ImageBackground 
-                                source = {Assets.welcome} 
-                                style = {Style.button_size}/>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style = {Style.row}>
-                        <TouchableOpacity
-                            style = {Style.button_size}
-                            activeOpacity = {0.5}  
-                            onPress = {() => {
                             Router.navigation('Bookroom', {Bookroom: 'Bookroom'});
                         }}>
                             <ImageBackground 
@@ -98,27 +85,7 @@ export default class Home extends Component {
                                 style = {Style.button_size}/>
                         </TouchableOpacity>
 
-                        <TouchableOpacity
-                            style = {Style.button_size}
-                            activeOpacity = {0.5}  
-                            onPress = {() => {
-                            Router.navigation('Controlroom', {Controlroom: 'Controlroom'});
-                        }}>
-                            <ImageBackground 
-                                source = {Assets.friends} 
-                                style = {Style.button_size}/>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity
-                            style = {Style.button_size}
-                            activeOpacity = {0.5}  
-                            onPress = {() => {
-                            Router.navigation('Newsfeed', {Newsfeed: 'Newsfeed'});
-                        }}>
-                            <ImageBackground 
-                                source = {Assets.newsfeed} 
-                                style = {Style.button_size}/>
-                        </TouchableOpacity>
+                        
                     </View>
                 </View>
             </ImageBackground>

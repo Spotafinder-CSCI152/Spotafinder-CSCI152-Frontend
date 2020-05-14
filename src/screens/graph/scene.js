@@ -1,86 +1,191 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, Dimensions,TouchableOpacity } from 'react-native';
-import {
-    LineChart
-} from 'react-native-chart-kit'
-import Style from './style'
-import Router from '../../navigator/router';
+// import React from 'react';
+// import { GiftedChat } from 'react-native-gifted-chat';
+// import {View, TouchableOpacity, Button, Text} from 'react-native'
+// import Router from '../../navigator/router';
+// import Style from './style';
+// export default class newsfeed extends React.Component {
+//   render() {
+//     return ( 
+    
+    
+// <View>
 
-export default class graph extends React.Component {
-    render() {
-        const line = {
-            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday','Sunday'],
-            datasets: [
-              {
-                data: [2, 4, 6, 8, 10, 12],
-                strokeWidth: 2, // optional
-              },
-            ],
-          };
-          
-        return (
- <View>
-     {/* <View style = {Style.row}> 
-                        <TouchableOpacity
-                            style = {Style.button_size}
-                            activeOpacity = {0.5}  
-                            onPress = {() => {
-                            Router.navigation('Home', {Home: 'Home'});
-                        }}></TouchableOpacity>
-      </View>               */}
+// <Button  style={{  display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center"}}
+//             title= "Press Me"
+//             onPress = {() => {Router.navigation('Home', {User:'Home'})
+//             }}
+//             />
+//             <Button  style={{  display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center"}}
+//             title= "Press Me"
+//             onPress = {() => {Router.navigation('Home', {User:'Home'})
+//             }}
+//             />
+//             <Button  style={{  display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center"}}
+//             title= "Press Me"
+//             onPress = {() => {Router.navigation('Home', {User:'Home'})
+//             }}
+//             />
+
+
+
+// </View>
+
+
+
+
+
+
+    
+//     );
+//   }
+// }
+
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Button,
+  Text,
+  View,
+  TouchableOpacity,
+  ListView,
+  Image,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
+import Router from '../../navigator/router';
+import { Window_Width, Window_Height } from '../../utils/constants';
+import SafeViewAndroid from '../../tool/globalstyle';
+import Copypaste from '../controlrooms/copypaste'
+
+
+
+
+export default class graph extends Component {
+
+  
+
+  render() {
+    return (
+      <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
+      <ScrollView>
+      <View style={styles.container}>
+        <View>
       <Button  style={{  display: "flex",
             justifyContent: "center",
             alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            title= "PRESS TO GO BACK"
+            color='#aa1428'
+            onPress = {() => {Router.navigation('Bookroom', {User:'Bookroom'})
             }}
             />
             <Button  style={{  display: "flex",
             justifyContent: "center",
             alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            title= "GO BACK"
+            color='white'
+            onPress = {() => {Router.navigation('Bookroom', {User:'Bookroom'})
             }}
             />
             <Button  style={{  display: "flex",
             justifyContent: "center",
             alignItems: "center"}}
-            title= "Press Me"
-            onPress = {() => {Router.navigation('Home', {User:'Home'})
+            title= "<3 AMERICA"
+            color='#000042'
+            onPress = {() => {Router.navigation('Bookroom', {User:'Bookroom'})
             }}
             />
 
-    <View style = {Style.graph_size}>
-     <Text>
-       Library Data 
-    </Text>
-    
-    <LineChart
-        data={line}
-        width={Dimensions.get('window').width} // from react-native
-        height={220}
-        yAxisLabel={'Time'}
-        chartConfig={{
-        backgroundColor: '#e26a00',
-        backgroundGradientFrom: '#FF0000',
-        backgroundGradientTo: '#00FF',
-        decimalPlaces: 2, // optional, defaults to 2dp
-        color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-        style: {
-            borderRadius: 16
-        } 
-        }}
-        bezier
-        style={{
-         marginVertical: 8,
-         borderRadius: 16
-        }}
-    />
-    </View>
+          <View>
+          <Text style={styles.box}>Average Loudness Per month Percentiles:</Text>
+          <Copypaste/>
+          </View>
 
- </View>
- 
+        </View>
+        <View>
+          <Image
+          source={require('./assets/s.png')}
+         style = {styles.background_size}
 
-        );
-    }
+          />
+          </View>
+          <View style={{justifyContent:'space-between'}}>
+          <Image
+          source={require('./assets/T.png')}
+         style = {styles.background_size}
+
+          />
+          </View>
+          <View>
+          <Image
+          source={require('./assets/b.png')}
+         style = {styles.background_size}
+
+          />
+          </View>
+                
+      </View>
+      </ScrollView>
+      </SafeAreaView>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  background_size: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    
+},
+row: {
+  flexDirection: 'row',
+  justifyContent: 'space-evenly',
+  width: 200,
+},
+  header:{
+    backgroundColor: "#20B2AA",
+  },
+  headerContent:{
+    padding:30,
+    alignItems: 'center',
+  },
+  avatar: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "#FFFFFF",
+    marginBottom:10,
+  },
+  image:{
+    width: 60,
+    height: 60,
+  },
+  name:{
+    fontSize:22,
+    color:"#FFFFFF",
+    fontWeight:'600',
+  },
+  body: {
+    padding:30,
+    backgroundColor :"#E6E6FA",
+  },
+  
+  username:{
+    color: "#20B2AA",
+    fontSize:22,
+    alignSelf:'center',
+    marginLeft:10
+  },
+  box: {
+    fontSize:19,
+    fontWeight:'900',
+    color:'black'
+  },
+  
+});

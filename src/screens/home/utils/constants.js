@@ -16,13 +16,13 @@ const slider = [
         text: "Alps",
     }
 ];
-const background = require('../assets/images/background.png');
+const background = require('../assets/images/lol.png');
 const profile = require('../assets/images/liu.png');
 const chaty = require('../assets/images/chat.png');
 const bookroom = require('../assets/images/bookrm.jpg');
-const map = require('../assets/videos/map.gif');
+const map = require('../assets/images/congestion.png');
 const friends = require('../assets/videos/friends.gif');
-const setting = require('../assets/videos/setting.gif');
+const setting = require('../assets/images/set.webp');
 const welcome = require('../assets/videos/welcome.gif');
 const newsfeed = require('../assets/images/nf.png');
 

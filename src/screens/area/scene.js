@@ -31,7 +31,7 @@ function get_building() {
         path.get().then((doc) => {
             var buildings = Object.keys(doc.data()).map((key) => { return {name: key} });
             resolve(buildings);
-        });
+        }); 
     });
 }
 
@@ -79,6 +79,7 @@ export default function Area() {
                     {/*Back Button*/}
                     <Button
                         title = 'Back'
+                        color='#000042'
                         onPress = {() => Router.navigation('Home', {Home: 'Home'})}
                     />
                 </View>

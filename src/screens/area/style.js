@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
         //width: Window_Width,
         //height: Window_Height,
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#E6E6FA',
         //alignItems: 'center',
     },
     
@@ -35,7 +35,7 @@ export default styles = StyleSheet.create({
         width: 70,
         height: Window_Height * .05,
         borderRadius: 15,
-        backgroundColor: 'pink',
+        backgroundColor: '#000042',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -50,7 +50,7 @@ export default styles = StyleSheet.create({
         width: Window_Width * 0.45,
         height: Window_Height * 0.05,
         borderRadius: 15,
-        backgroundColor: 'pink'
+        backgroundColor: '#aa1428'
     },
 
     /*
@@ -80,7 +80,7 @@ export default styles = StyleSheet.create({
         width: Window_Width * .90,
         height: 90,
         borderRadius: 15, 
-        backgroundColor: 'pink',
+        backgroundColor: '#aa1428',
         marginBottom: 25,
         justifyContent: 'center',
         alignItems: 'center',
