@@ -1,4 +1,3 @@
-
 // import React from 'react';
 // import { GiftedChat } from 'react-native-gifted-chat';
 // import {View, TouchableOpacity, Button, Text} from 'react-native'
